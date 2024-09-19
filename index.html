@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нефтесервисная компания</title>
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./content.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./services.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <nav class="navbar">
+        <a href="" class="nav-link" data-target="home"><img src="./media/logo3.svg" alt="Логотип" class="navbar-logo" ></a>
+        <div class="navbar-center">
+            <a href="" class="nav-link" data-target="services">Услуги</a>
+            <a href="" class="nav-link" data-target="equipment">Оборудование</a>
+            <a href="" class="nav-link" data-target="contacts">Контакты</a>
+        </div>
+        <!-- <button class="contact-btn" id="openModal">Связаться с нами</button> -->
+    </nav>
+
+    <div class="content">
+
+        <div id="home" class="content-block active mainPage">Это главная страница.
+            
+
+        </div>
+
+        <div id="services" class="content-block " style="display: none;">
+            <div>
+                                
+                <div class="card-container">
+                    <div class="card" id="card1">
+                        <h2 class="card-title">БУРЕНИЕ НА ОБСАДНОЙ КОЛОННЕ(БОК)</h2>
+                        <p class="card-description">Технология БОК довольно хорошо зарекомендовала себя при бурении интервалов под кондуктор диаметром 340, 324 и 245мм. В ряде случаев время на строительство скважины при бурении на обсадной колонне под кондуктор существенно меньше по сравнению с традиционным методом.</p>
+                        <img src="./media/logo3.svg" alt="Логотип" class="card-logo">
+                        <div class="card-background"></div>
+                        <button class="detail-btn" onclick="openModal('card1-modal'); event.stopPropagation();">Подробнее</button> <!-- Кнопка внутри карточки -->
+                    </div>
+                    
+                    <div class="card" id="card2">
+                        <h2 class="card-title">СПУСК ОБСАДНЫХ КОЛОНН С ВРАЩЕНИЕМ И ПРОМЫВКОЙ</h2>
+                        <img src="./media/logo3.svg" alt="Логотип" class="card-logo">
+                        <div class="card-background"></div>
+                        <p class="card-description">Технология спуска обсадной колонны с вращением обеспечивает эффективный спуск обсадных колонн до необходимой глубины в условиях осложненного ствола скважины, отсутствует необходимость подготовки открытого ствола скважины для спуска обсадной колонны.</p>
+                        <button class="detail-btn" onclick="openModal('card2-modal'); event.stopPropagation();">Подробнее</button> <!-- Кнопка внутри карточки -->
+                    </div>
+                    
+                    
+                
+                    <div class="card" id="card3" onclick="openModal('card3-modal')">
+                        <h2 class="card-title">ИНЖИНИРИНГОВЫЕ УСЛУГИ И КОНСАЛТИНГ В ОБЛАСТИ БУРОВОГО ОБОРУДОВАНИЯ</h2>
+                        <img src="./media/logo3.svg" alt="Логотип" class="card-logo">
+                        <div class="card-background"></div>
+                        <p class="card-description">«ТНС» обладает опытом и знаниями в области оказания инжиниринговых услуг с привлечением ведущих конструкторов для разработки дизайна, конструкторской документации, производства бурового оборудования и его отдельных элементов.</p>
+                    </div>
+                
+                    <div class="card" id="card4" onclick="openModal('card4-modal')">
+                        <h2 class="card-title">АРЕНДА ОБОРУДОВАНИЯ</h2>
+                        <img src="./media/logo3.svg" alt="Логотип" class="card-logo">
+                        <div class="card-background"></div>
+                        <p class="card-description">«ТНС» обеспечит качественным буровым оборудованием и его отдельных элементов. Инженерное сопровождение по выбору Заказчика.</p>
+                    </div>
+                </div>
+                
+                <!-- Модальные окна -->
+                <div id="card1-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('card1-modal')">&times;</span>
+                        <h2>Подробное описание БУРЕНИЕ НА ОБСАДНОЙ КОЛОННЕ(БОК)</h2>
+                        <p>Здесь будет подробное описание для карточки БУРЕНИЕ НА ОБСАДНОЙ КОЛОННЕ(БОК).</p>
+                    </div>
+                </div>
+                
+                <div id="card2-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('card2-modal')">&times;</span>
+                        <h2>Подробное описание СПУСК ОБСАДНЫХ КОЛОНН С ВРАЩЕНИЕМ И ПРОМЫВКОЙ</h2>
+                        <p>Здесь будет подробное описание для карточки СПУСК ОБСАДНЫХ КОЛОНН С ВРАЩЕНИЕМ И ПРОМЫВКОЙ.</p>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+
+        <div id="equipment" class="content-block" style="display: none;">Это страница оборудования.
+
+        </div>
+
+        <div id="contacts" class="content-block" style="display: none;">
+            <h1>Контактная информация:</h1>
+
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #000000; color: white;">
+        <p>&copy; 2024 Нефтесервисная компания</p>
+    </footer>
+
+<script src="./header.js"></script>
+<script src="./contentChanger.js"></script>
+<script src="./modal.js"></script>
+</body>
+</html>

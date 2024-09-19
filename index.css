@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 100px; /* Увеличьте отступ, если шапка выше 60px */
+    box-sizing: border-box;
+  }
+  

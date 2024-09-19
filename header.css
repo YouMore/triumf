@@ -1,0 +1,102 @@
+/* Стили для навигационного меню */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0c004f;
+  padding: 20px;
+  position: fixed; /* Фиксация шапки */
+  top: 0;
+  left: 0;
+  width: 100%; /* Во всю ширину */
+  z-index: 1000; /* Поверх всех элементов */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для отделения шапки от контента */
+}
+
+/* Убираем отступы и применяем глобальные стили для страницы */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Отступ, чтобы контент не скрывался под шапкой */
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  width: 150px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-center a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.contact-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Стили при наведении */
+.navbar-logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.navbar-center a:hover {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.navbar-center a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
+}
+
+.navbar-center a:hover::before {
+  width: 100%;
+  left: 0;
+  transform: none;
+}
+
+.contact-btn:hover {
+  cursor: pointer;
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Пространство между текстом и границей */
+.navbar-center a {
+  padding-bottom: 8px;
+  font-size: 120%;
+}
+
+/* Чтобы полоска оставалась при нажатии */
+.navbar-center a.active {
+  color: #007bff; /* Цвет текста активной ссылки */
+}
+
+.navbar-center a.active::before {
+  width: 100%; /* Полоска активной ссылки */
+  left: 0;
+  transform: none;
+}
+
+.navbar-center a:last-child {
+  margin-right: 50px; /* Увеличьте значение по вашему усмотрению */
+}
