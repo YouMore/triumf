@@ -27,6 +27,12 @@
     padding: 20px;
 }
 
+.card-title {
+    font-size: 18px;
+    margin: 0 0 10px 0; /* Заголовок всегда сверху */
+    color: #0c004f;
+}
+
 
 
 .card:hover {
@@ -34,16 +40,38 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
+/* .card-title {
     font-size: 18px;
     margin: 0;
     color: #0c004f;
+} */
+
+/* .card-description {
+    font-size: 18px;
+    color: #0c004f;
+} */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Выравниваем контент по нижней части */
+    flex-grow: 1; /* Занимает оставшееся пространство */
 }
 
 .card-description {
     font-size: 18px;
     color: #0c004f;
+    margin: 0;
+    margin-bottom: 20px; /* Отступ снизу для кнопки */
+    transition: transform 0.4s ease;
 }
+/* При наведении текст приподнимается, а кнопка появляется */
+
+
+.card:hover .detail-btn {
+    display: block; /* Показываем кнопку при наведении */
+    margin-top: 10px; /* Отступ для кнопки */
+}
+
 
 .card-logo {
     position: absolute;
@@ -71,35 +99,57 @@
     opacity: 0.5;
 }
 
-/* Стили для модального окна */
+/* Основные стили для модального окна */
 .modal {
-    display: none;
+    display: none; /* Скрыто по умолчанию */
     position: fixed;
-    top: 0;
+    z-index: 1000;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #fefefe;
+    margin: 10% auto;
     padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto; /* Прокрутка для длинного контента */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
 }
 
 .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
     cursor: pointer;
 }
+
+.open-modal-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.open-modal-btn:hover {
+    background-color: #0056b3;
+}
+
 
 /* Адаптивность */
 @media (max-width: 1024px) {
@@ -129,22 +179,29 @@
 /* Скрываем кнопку по умолчанию */
 .detail-btn {
     display: none; /* Скрыть кнопку по умолчанию */
-    padding: 10px 20px;
-    background-color: #007bff;
+    padding: 12px 25px;
+    background-color: #034876;
+    opacity: 0.5;
+    background-image: linear-gradient(45deg, #007bff, #00aaff); /* Градиент */
     color: white;
+    font-size: 18px; /* Увеличен шрифт */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px; /* Закругленные края */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: flex-start; /* Выровнять по левому краю карточки */
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    align-self: flex-end; /* Выровнять по левому краю карточки */
+    z-index: 5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
 }
 
 /* Показать кнопку при наведении на карточку */
-.card:hover .detail-btn {
-    display: block; /* Показываем кнопку при наведении на карточку */
-}
-
+/* .card:hover .detail-btn {
+    display: block; 
+} */
 .detail-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+    background-color: #034876;
+    background-image: linear-gradient(45deg, #034876, #007bff);
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    opacity: 1;
 }
